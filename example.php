@@ -9,7 +9,10 @@ $attributes = [
     'authors' => 'Andrew Schmelyun',
     'title' => 'Andrew Schmelyun\'s Blog',
     'feed' => 'https://aschmelyun.com/feed.xml',
+    'description' => 'test'
 ];
+
+$categories = ['test1', 'test2'];
 
 $feed = Feed::create($attributes)
     ->entry([
@@ -17,8 +20,10 @@ $feed = Feed::create($attributes)
         'title' => 'Post One',
         'link' => 'https://example.com/blog/post-one',
         'summary' => 'This is my summary',
-        'content' => '<p>This is my example content!</p>'
+        'content' => '<p>This is my example content!</p>',
+        'description' => 'test',
+        'categories' => $categories,
     ]);
 
 header('Content-type: application/xml');
-echo $feed->asAtom();
+echo $feed->asRss();

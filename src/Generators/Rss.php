@@ -77,7 +77,13 @@ class Rss implements Generator
             $entry = $this->xml->channel->addChild('item');
 
             foreach($attributes as $element => $value) {
-                $entry->addChild($element, $value);
+                if ($element == 'categories') {
+                    foreach($value as $category) {
+                        $entry->addChild('category', $category);
+                    }
+                } else {
+                    $entry->addChild($element, $value);
+                }
             }
         }
 

@@ -130,7 +130,13 @@ class Atom implements Generator
             );
 
             foreach($attributes as $element => $value) {
-                $entry->addChild($element, $value);
+                if ($element == 'categories') {
+                    foreach($value as $category) {
+                        $entry->addChild('category', $category);
+                    }
+                } else {
+                    $entry->addChild($element, $value);
+                }
             }
         }
 

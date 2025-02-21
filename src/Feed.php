@@ -26,7 +26,7 @@ class Feed
     {
         // this handles nested arrays of attributes being passed into this method
         foreach($attributes as $index => $attribute) {
-            if (is_array($attribute)) {
+            if (is_array($attribute) && $index != 'categories') {
                 $this->entries[] = $attribute;
 
                 unset($attributes[$index]);
