@@ -1,5 +1,5 @@
 {
-    "name": "aschmelyun/basic-feeds",
+    "name": "tleuschel/basic-feeds",
     "type": "library",
     "description": "A simple PHP library to generate RSS and Atom feeds",
     "keywords": [
@@ -15,6 +15,10 @@
         {
             "name": "Andrew Schmelyun",
             "email": "me@aschmelyun.com"
+        },
+        {
+            "name": "Tonia Leuschel",
+            "email": "t.leuschel@metaways.de"
         }
     ],
     "require": {
