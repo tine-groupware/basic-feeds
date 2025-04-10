@@ -81,6 +81,10 @@ class Rss implements Generator
                     foreach($value as $category) {
                         $entry->addChild('category', $category);
                     }
+                } else if ($element == 'images') {
+                    foreach($value as $image) {
+                        $entry->addChild('image', $image);
+                    }
                 } else {
                     $entry->addChild($element, $value);
                 }

@@ -13,6 +13,7 @@ $attributes = [
 ];
 
 $categories = ['test1', 'test2'];
+$images = ["image1", "image2"];
 
 $feed = Feed::create($attributes)
     ->entry([
@@ -23,6 +24,7 @@ $feed = Feed::create($attributes)
         'content' => '<p>This is my example content!</p>',
         'description' => 'test',
         'categories' => $categories,
+        'images' => $images,
     ]);
 
 header('Content-type: application/xml');
